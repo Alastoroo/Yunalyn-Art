@@ -18,14 +18,17 @@
 <body>
 
 {% block body %}
+
+
 <!-- HEADER -->
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">Yunalyn-Art</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Dessins</a></li>
+        <li><a href="#">Video</a></li>
+        <li><a href="#">Passion</a></li>
       </ul>
     </div>
   </nav>
@@ -55,7 +58,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Colin Bléchet.
+    © 2014 Copyright Colin Bléchet. <a href="mailto:colinb.dev@gmail.com">Envie d'un site web ? Contactez-moi.</a>
     <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
     </div>
   </div>
@@ -64,11 +67,28 @@
 <!-- MENU -->
 {# {{ include(':default:menu.html.twig') }} #}
 
-
 {% endblock %}
 {% block javascripts %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js'></script>
 <script>
-
+(function() {
+  // Masonry grid setup
+  $(".grid").masonry({
+    itemSelector: ".grid__item",
+    columnWidth: ".grid__sizer",
+    gutter: 15,
+    percentPosition: true
+  });
+  // Image replacement handler
+  $(document).on("click", ".js-button", function() {
+    var imageSrc = $(this).parents(".grid__item").find("img").attr("src");
+    $(".js-download").attr("href", imageSrc);
+    $(".js-modal-image").attr("src", imageSrc);
+    $(document).on("click", ".js-heart", function() {
+      $(this).toggleClass("active");
+    });
+  });
+})();
 </script>
 {% endblock %}
 </body>

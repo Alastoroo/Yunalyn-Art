@@ -2,30 +2,35 @@
 {% block stylesheets %}
   {{parent()}}
   <style>
+.bgIndex{
+  background-image: url("{{ asset('assets/images/me.jpg') }}");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
   </style>
 {% endblock stylesheets%}
 {% block content %}
 <!-- <img class="img-responsive" src="{{ asset('assets/images/me.jpg') }}" alt="" style="max-width: 100%; margin-top: 25px;"> -->
-<!-- Element Showed -->
-  <a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
-
-  <!-- Tap Target Structure -->
-  <div class="tap-target" data-target="menu">
-    <div class="tap-target-content">
-      <h5>Title</h5>
-      <p>Description</p>
-    </div>
+<div class="container-fluid bgIndex">
+  <div class="row">
+      <h1 class="titre">lorem</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
   </div>
+</div>
 {% endblock content %}
+
 {% block javascripts %}
 {{ parent()}}
 <script>
-var elem = document.querySelector('.tap-target');
-var instance = M.FeatureDiscovery.init(elem, options);
-  // Or with jQuery
-  $(document).ready(function(){
-    $('.tap-target').featureDiscovery();
-  });
+// $(document).ready(function(){
+//   $(".titre").hide(4444);
+//   $(".titre").fadeIn(4000,function(){
+//       // $("#titre").show();
+//   });
+// });
 </script>
 {% endblock javascripts %}
